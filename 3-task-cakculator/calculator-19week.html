@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel = "stylesheet" href="./calculator-19week.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <label for="oneNumber">Введите первую цифру</label>
+        <input  oninput="cleanErrors()" type="number" id="oneNumber" required />
+        <label for="twoNumber">Введите вторую цифру</label>
+        <input oninput="cleanErrors()" type="number" id="twoNumber" required/>
+        <br>
+        
+        <button onClick="start('addTogether')" class="div">Сложение:</button>
+        <div class="div-inline clear-result" id="derivation-add-together"></div>
+        <br>
+        <button onClick="start('subtract')" class="div">Вычитание:</button>
+        <div class="div-inline clear-result" id="derivation-subtract"></div>
+        <br>
+        <button onClick="start('divide')" class="div">Деление:</button>
+        <div class="div-inline clear-result" id="derivation-divide"></div>
+        <br>
+        <button onClick="start('multiply')" class="div">Умножение:</button>
+        <div class="div-inline clear-result" id="derivation-multiply"></div>
+        <div id="errors"></div>
+    </form>
+    <script src="./calculator-19week.js"></script>
+</body>
+
+</html>
+<!-- <form action="#">
+    <label for="oneNumber">Введите первую цифру</label>
+    <input  oninput="cleanErrors()" type="number" id="oneNumber" value="" />
+    <label for="twoNumber">Введите вторую цифру</label>
+    <input oninput="cleanErrors()" type="number" id="twoNumber" />
+    <br>
+    
+    <div onClick="start('addTogether')" class="div">Сложение:</div>
+    <div class="div-inline clear-result" id="derivation-add-together"></div>
+    <br>
+    <div onClick="start('subtract')" class="div">Вычитание:</div>
+    <div class="div-inline clear-result" id="derivation-subtract"></div>
+    <br>
+    <div onClick="start('divide')" class="div">Деление:</div>
+    <div class="div-inline clear-result" id="derivation-divide"></div>
+    <br>
+    <div onClick="start('multiply')" class="div">Умножение:</div>
+    <div class="div-inline clear-result" id="derivation-multiply"></div>
+    <div id="errors"></div>
+</form> -->
