@@ -56,7 +56,7 @@ function start(event) {
     let num = getNumber();
     console.log(num);
 
-    if (num[0] && num[1]) {
+    if (num[0] !== "" && num[1] !== "") {
 
         switch (event) {
             case 'addTogether':
