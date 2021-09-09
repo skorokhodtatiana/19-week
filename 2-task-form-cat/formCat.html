@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+    <link rel="stylesheet" href="./formCat.css">
+    <link rel="icon" type="image/png" href="assets/images/cat.png">
+</head>
+
+<body>
+    <h1>Заполните анкету</h1>
+    <form action="#" class="formCat">
+        <div>
+            <label for="name">Имя кота</label>
+            <input type="text" id="nameCat" />
+        </div>
+        <div>
+            <label for="nameOwner">Имя владельца</label>
+            <input type="text" id="nameOwner" />
+        </div>
+        <div>
+            <label for="contacts">Контакты владельца</label>
+            <input type="text" id="contacts" />
+        </div>
+        <div>
+            <p>Порода питомца</p>
+            <select id=breed>
+                <option disabled selected="selected">Выберите породу</option>
+                <option value="Сиамнская кошка">Сиамнская кошка</option>
+                <option value="Мейн-кун">Мейн-кун</option>
+                <option value="Сфинкс">Сфинкс</option>
+                <option value="Персидская кошка">Персидская кошка</option>
+                <option value="Сибирская кошка">Сибирская кошка</option>
+            </select>
+        </div>
+        <div>
+                <p>Чем питается</p>
+                <label for="dry">Cухой корм</label>
+                <input type="checkbox" class="foodCat" id="dry" value="Сухой корм"><br />
+                <label for="wet">Влажный корм</label>
+                <input type="checkbox" class="foodCat" id="wet" value="Влажный корм"><br />
+                <label for="natural">Натуральный корм</label>
+                <input type="checkbox" class="foodCat" id="natural" value="Натуральный корм" />
+        </div>
+
+        <div>
+            <p>Пол животного</p>
+            <label for="male">Самец</label>
+            <input type="radio" id="male" name="gender" />
+            <label for="female">Самка</label>
+            <input type="radio" id="female" name="gender" />
+        </div>
+        <div>
+            <button onclick="start()">Сохранить</button>
+        </div>
+    </form>
+    <script src="./formCat.js"></script>
+</body>
+
+</html>
