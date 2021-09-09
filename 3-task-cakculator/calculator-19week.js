@@ -1,13 +1,5 @@
-//const result = document.getElementById('result');
-// const number1 = document.getElementById('oneNumber');
-// const number2 = document.getElementById('twoNumber');
 const errors = document.getElementById('errors');
-
 class Calculator {
-    // constructor(number1, number2) {
-    //     this.oneNumber = number1;
-    //     this.twoNumber = number2;
-    // }
 
     static addTogether(oneOperand, twoOperand) {
         return oneOperand + twoOperand;
@@ -29,36 +21,42 @@ class Calculator {
 function getNumber() {
     let operands = [];
     let oneOperand = document.getElementById('oneNumber').value;
-    // if (checkedNumber(oneOperand) === false) {
-    //     return false;
-    // };
-    operands.push(Number(oneOperand));
+    if (checkedNumber(oneOperand) === true) {
+        operands.push(Number(oneOperand));
+    };
 
     let twoOperand = document.getElementById('twoNumber').value;
-    //checkedNumber(twoOperand);
-    operands.push(Number(twoOperand));
+    if (checkedNumber(twoOperand) === true) {
+        operands.push(Number(twoOperand));
+    };
+
+    console.log(operands);
     return operands;
 }
 
-// function checkedNumber(num) {
-//     if (!num) {
-//         errors.innerHTML = "Введите оба числа";
-
-//     }
-//     return false;
-// }
+function checkedNumber(num) {
+    if (num) {
+        return true;
+    } else {
+        errors.innerHTML = "Введите оба числа";
+    }
+}
 
 function cleanErrors() {
     errors.innerHTML = "";
 }
 
-//checkedNumber(5, true);
-
+function cleanInputs() {
+    document.getElementById('twoNumber').value = "";
+    document.getElementById('oneNumber').value = "";
+}
 
 function start(event) {
 
     let num = getNumber();
     console.log(num);
+
+    if (num[0] && num[1]) {
 
         switch (event) {
             case 'addTogether':
@@ -70,11 +68,16 @@ function start(event) {
                 break;
 
             case 'divide':
-                document.getElementById('derivation-divide').innerHTML = Calculator.divide(num[0], num[1]);
+                if (num[1] === 0) {
+                    errors.innerHTML = "Делить на 0 нельзя";
+                } else {
+                    document.getElementById('derivation-divide').innerHTML = Calculator.divide(num[0], num[1]);
+                }
                 break;
 
             case 'multiply':
                 document.getElementById('derivation-multiply').innerHTML = Calculator.multiply(num[0], num[1]);
                 break;
         }
+    }
 }
