@@ -1,5 +1,5 @@
 class Cat {
-    constructor(nameCat, nameOwner, contacts, breed) {
+    constructor(nameCat, nameOwner, contacts, breed, food, gender) {
         this.nameCat = nameCat;
         this.nameOwner = nameOwner;
         this.contacts = contacts;
@@ -17,9 +17,13 @@ function start() {
     let valContacts = getArgument('contacts');
     let valBreed = getBreed();
     let valFood = getFood();
+    let valGender = getGender();
 
-    values.push(valNameCat, valNameOwner, valContacts, valBreed, valFood);
-    console.log(values);
+    values.push(valNameCat, valNameOwner, valContacts, valBreed, valFood, valGender);
+
+    let [nameCat, nameOwner, contacts, breed, food, gender] = values;
+    let newCat = new Cat(nameCat, nameOwner, contacts, breed, food, gender);
+     console.log(newCat);
 }
 
 function getArgument(id) {
@@ -41,88 +45,11 @@ function getFood(){
             chooseFood.push(checkboxList[i].value) ;
         }
     }
-    console.log(chooseFood);
-    return chooseFood;
+    let stringChooseFood = chooseFood.join(',');
+    return stringChooseFood;
 }
 
-
-
-let [nameCat, nameOwner, contacts, breed, food, gender] = values;
-
-let newCat = new Cat(nameCat, nameOwner, contacts, breed, food, gender);
-
-//console.log(newCat);
-
-
-
-
-// function getInputs(){
-//     values = [];
-//     let valueNameCat = document.getElementById('nameCat').value;
-//     values.push(valueNameCat);
-
-//     let valueNameOwner = document.getElementById('nameOwner').value;
-//     values.push(valueNameOwner);
-
-//     let valueContacts = document.getElementById('contacts').value;
-//     values.push(valueContacts);
-
-
-
-//     let valueBreed = document.getElementById('nameOwner');
-//     let selectBreed = valueBreed.select.value;
-//     console.log(selectBreed);
-//     values.push(selectBreed);
-//     //return values;
-
-//     let[nameCat, nameOwner, contacts, breed] = values;
-
-//     let newCat = new Cat(nameCat, nameOwner, contacts, breed);
-
-//     console.log(newCat);
-
-
-//     // let valueNameOwner = document.getElementById('nameOwner').value;
-//     // values.push(valueNameOwner);
-//     // let valueNameOwner = document.getElementById('nameOwner').value;
-//     // values.push(valueNameOwner);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function getInputs(){
-//     values = [];
-//     let valueNameCat = document.getElementById('nameCat').value;
-//     values.push(valueNameCat);
-
-//     let valueNameOwner = document.getElementById('nameOwner').value;
-//     values.push(valueNameOwner);
-
-//     let valueContacts = document.getElementById('contacts').value;
-//     values.push(valueContacts);
-
-
-
-//     let valueBreed = document.getElementById('nameOwner');
-//     let selectBreed = valueBreed.select.value;
-//     console.log(selectBreed);
-//     values.push(selectBreed);
-//     //return values;
-
-//     let[nameCat, nameOwner, contacts, breed] = values;
-
-//     let newCat = new Cat(nameCat, nameOwner, contacts, breed);
-
-//     console.log(newCat);
-
-// }
+function getGender(){
+    let chooseGender = document.querySelector('input[name="gender"]:checked').value;
+    return chooseGender;
+}
