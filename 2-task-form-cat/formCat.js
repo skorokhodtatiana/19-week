@@ -23,7 +23,7 @@ function start() {
 
     let [nameCat, nameOwner, contacts, breed, food, gender] = values;
     let newCat = new Cat(nameCat, nameOwner, contacts, breed, food, gender);
-     console.log(newCat);
+    console.log(newCat);
 }
 
 function getArgument(id) {
@@ -37,12 +37,12 @@ function getBreed() {
     return valueBrand;
 }
 
-function getFood(){
+function getFood() {
     let checkboxList = document.getElementsByClassName('foodCat');
     let chooseFood = [];
-    for(i=0; i < checkboxList.length; i++){
-        if(checkboxList[i].checked){
-            chooseFood.push(checkboxList[i].value) ;
+    for (i = 0; i < checkboxList.length; i++) {
+        if (checkboxList[i].checked) {
+            chooseFood.push(checkboxList[i].value);
         }
     }
     let stringChooseFood = chooseFood.join(',');
@@ -50,6 +50,9 @@ function getFood(){
 }
 
 function getGender(){
-    let chooseGender = document.querySelector('input[name="gender"]:checked').value;
-    return chooseGender;
+    if(document.querySelector('input[name="gender"]:checked')){
+        let chooseGender = document.querySelector('input[name="gender"]:checked').value;
+        console.log(chooseGender);
+        return chooseGender;
+    }
 }
